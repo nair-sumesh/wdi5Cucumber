@@ -63,6 +63,14 @@ exports.config = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     }],
+    wdi5: {
+        screenshotPath: require("path").join("some", "dir", "for", "screenshots"), // [optional] {string}, default: ""
+        screenshotsDisabled: false, // [optional] {boolean}, default: false; if set to true, screenshots won't be taken and not written to file system
+        logLevel: "verbose", // [optional] error | verbose | silent, default: "error"
+        url: "index.html", // [mandatory] {string} name of your bootstrap html file. If your server autoredirects to a 'domain:port/'-like root url, use empty string ''
+        skipInjectUI5OnStart: false, // [optional] {boolean}, default: false; true when UI5 is not on the start page, you need to later call <wdioUI5service>.injectUI5() manually
+        waitForUI5Timeout: 15000 // [optional] {number}, default: 15000; maximum waiting time in milliseconds while checking for UI5 availability
+    },
     //
     // ===================
     // Test Configurations
